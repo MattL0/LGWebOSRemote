@@ -224,7 +224,10 @@ class LGTVRemote(WebSocketClient):
 
     def inputMediaPlay(self, callback=None):
         self.__send_command("request", "ssap://media.controls/play", None, callback)
-
+    
+    def yo(self, callback=None):
+        self.__send_command("request", "ssap://com.webos.settingsservice/setSystemSettings", {"category": "picture", "settings": {"pictureMode": dolbyStandard}}, callback)
+	
     def inputMediaStop(self, callback=None):
         self.__send_command("request", "ssap://media.controls/stop", None, callback)
 
